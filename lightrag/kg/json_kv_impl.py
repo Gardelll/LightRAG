@@ -127,3 +127,8 @@ class JsonKVStorage(BaseKVStorage):
                 self._data.pop(doc_id, None)
             await set_all_update_flags(self.namespace)
         await self.index_done_callback()
+
+    async def drop(self) -> None:
+        async with self._storage_lock:
+            self._data.clear()
+        await self.index_done_callback()

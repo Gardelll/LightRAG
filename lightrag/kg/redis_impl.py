@@ -147,3 +147,7 @@ class RedisKVStorage(BaseKVStorage):
 
         except Exception as e:
             logger.error(f"Error deleting relations for {entity_name}: {e}")
+
+    async def drop(self) -> None:
+        # TODO
+        pass

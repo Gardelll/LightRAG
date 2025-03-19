@@ -392,6 +392,10 @@ class OracleKVStorage(BaseKVStorage):
         # Oracle handles persistence automatically
         pass
 
+    async def drop(self) -> None:
+        logger.info(f"Cleaning {self.namespace} data")
+        # TODO clean database by namespace
+
 
 @final
 @dataclass

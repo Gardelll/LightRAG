@@ -278,6 +278,10 @@ class TiDBKVStorage(BaseKVStorage):
         # Ti handles persistence automatically
         pass
 
+    async def drop(self) -> None:
+        # TODO drop database by namespace
+        pass
+
 
 @final
 @dataclass
